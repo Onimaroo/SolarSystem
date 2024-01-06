@@ -17,10 +17,9 @@
 /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_Projet/CMakeFiles/TP_Projet_exo1_sphere.dir
 /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_Projet/CMakeFiles/TP_Projet_exo2_lune.dir
 /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_Projet/CMakeFiles/TP_Projet_exo3_earth.dir
-/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_SolarSystem/CMakeFiles/edit_cache.dir
-/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir
 /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_SolarSystem/CMakeFiles/rebuild_cache.dir
-/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir
+/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir
+/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_SolarSystem/CMakeFiles/edit_cache.dir
 /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_template/CMakeFiles/rebuild_cache.dir
 /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_template/CMakeFiles/TP_template_SDLtemplate.dir
 /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_template/CMakeFiles/edit_cache.dir

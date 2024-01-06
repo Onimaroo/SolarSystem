@@ -11,7 +11,7 @@ class FreeflyCamera {
         FreeflyCamera() {
             m_Position.x = 0;
             m_Position.y = 0;
-            m_Position.z = 5;
+            m_Position.z = 10;
             m_fPhi = M_PI;
             m_fTheta = 0; 
 

@@ -48,5 +48,6 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template"
 }

@@ -280,30 +280,17 @@ TP_Projet_exo3_earth/fast:
 .PHONY : TP_Projet_exo3_earth/fast
 
 #=============================================================================
-# Target rules for targets named TP_SolarSystem_EarthMain
+# Target rules for targets named TP_SolarSystem_Application
 
 # Build rule for target.
-TP_SolarSystem_EarthMain: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_SolarSystem_EarthMain
-.PHONY : TP_SolarSystem_EarthMain
+TP_SolarSystem_Application: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TP_SolarSystem_Application
+.PHONY : TP_SolarSystem_Application
 
 # fast build rule for target.
-TP_SolarSystem_EarthMain/fast:
-	$(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/build
-.PHONY : TP_SolarSystem_EarthMain/fast
-
-#=============================================================================
-# Target rules for targets named TP_SolarSystem_SolarSystemMain
-
-# Build rule for target.
-TP_SolarSystem_SolarSystemMain: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_SolarSystem_SolarSystemMain
-.PHONY : TP_SolarSystem_SolarSystemMain
-
-# fast build rule for target.
-TP_SolarSystem_SolarSystemMain/fast:
-	$(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/build
-.PHONY : TP_SolarSystem_SolarSystemMain/fast
+TP_SolarSystem_Application/fast:
+	$(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/build
+.PHONY : TP_SolarSystem_Application/fast
 
 #=============================================================================
 # Target rules for targets named TP_template_SDLtemplate
@@ -339,8 +326,7 @@ help:
 	@echo "... TP_Projet_exo1_sphere"
 	@echo "... TP_Projet_exo2_lune"
 	@echo "... TP_Projet_exo3_earth"
-	@echo "... TP_SolarSystem_EarthMain"
-	@echo "... TP_SolarSystem_SolarSystemMain"
+	@echo "... TP_SolarSystem_Application"
 	@echo "... TP_template_SDLtemplate"
 .PHONY : help
 

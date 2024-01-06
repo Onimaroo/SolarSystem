@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/G
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,88 +111,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/rule:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f CMakeFiles/Makefile2 TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/rule
-.PHONY : TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/rule
+TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/rule:
+	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f CMakeFiles/Makefile2 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/rule
+.PHONY : TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/rule
 
 # Convenience name for target.
-TP_SolarSystem_EarthMain: TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/rule
+TP_SolarSystem_Application: TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/rule
 
-.PHONY : TP_SolarSystem_EarthMain
+.PHONY : TP_SolarSystem_Application
 
 # fast build rule for target.
-TP_SolarSystem_EarthMain/fast:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/build
-.PHONY : TP_SolarSystem_EarthMain/fast
+TP_SolarSystem_Application/fast:
+	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/build
+.PHONY : TP_SolarSystem_Application/fast
 
-# Convenience name for target.
-TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/rule:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f CMakeFiles/Makefile2 TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/rule
-.PHONY : TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/rule
+Application.o: Application.cpp.o
 
-# Convenience name for target.
-TP_SolarSystem_SolarSystemMain: TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/rule
-
-.PHONY : TP_SolarSystem_SolarSystemMain
-
-# fast build rule for target.
-TP_SolarSystem_SolarSystemMain/fast:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/build
-.PHONY : TP_SolarSystem_SolarSystemMain/fast
-
-EarthMain.o: EarthMain.cpp.o
-
-.PHONY : EarthMain.o
+.PHONY : Application.o
 
 # target to build an object file
-EarthMain.cpp.o:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/EarthMain.cpp.o
-.PHONY : EarthMain.cpp.o
+Application.cpp.o:
+	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o
+.PHONY : Application.cpp.o
 
-EarthMain.i: EarthMain.cpp.i
+Application.i: Application.cpp.i
 
-.PHONY : EarthMain.i
-
-# target to preprocess a source file
-EarthMain.cpp.i:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/EarthMain.cpp.i
-.PHONY : EarthMain.cpp.i
-
-EarthMain.s: EarthMain.cpp.s
-
-.PHONY : EarthMain.s
-
-# target to generate assembly for a file
-EarthMain.cpp.s:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/EarthMain.cpp.s
-.PHONY : EarthMain.cpp.s
-
-SolarSystemMain.o: SolarSystemMain.cpp.o
-
-.PHONY : SolarSystemMain.o
-
-# target to build an object file
-SolarSystemMain.cpp.o:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/SolarSystemMain.cpp.o
-.PHONY : SolarSystemMain.cpp.o
-
-SolarSystemMain.i: SolarSystemMain.cpp.i
-
-.PHONY : SolarSystemMain.i
+.PHONY : Application.i
 
 # target to preprocess a source file
-SolarSystemMain.cpp.i:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/SolarSystemMain.cpp.i
-.PHONY : SolarSystemMain.cpp.i
+Application.cpp.i:
+	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.i
+.PHONY : Application.cpp.i
 
-SolarSystemMain.s: SolarSystemMain.cpp.s
+Application.s: Application.cpp.s
 
-.PHONY : SolarSystemMain.s
+.PHONY : Application.s
 
 # target to generate assembly for a file
-SolarSystemMain.cpp.s:
-	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/SolarSystemMain.cpp.s
-.PHONY : SolarSystemMain.cpp.s
+Application.cpp.s:
+	cd /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build && $(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.s
+.PHONY : Application.cpp.s
 
 # Help Target
 help:
@@ -200,16 +158,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... TP_SolarSystem_EarthMain"
 	@echo "... rebuild_cache"
-	@echo "... TP_SolarSystem_SolarSystemMain"
-	@echo "... EarthMain.o"
-	@echo "... EarthMain.i"
-	@echo "... EarthMain.s"
-	@echo "... SolarSystemMain.o"
-	@echo "... SolarSystemMain.i"
-	@echo "... SolarSystemMain.s"
+	@echo "... TP_SolarSystem_Application"
+	@echo "... edit_cache"
+	@echo "... Application.o"
+	@echo "... Application.i"
+	@echo "... Application.s"
 .PHONY : help
 
 

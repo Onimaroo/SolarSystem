@@ -72,7 +72,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "TP_Projet/CMakeFiles/TP_Projet_exo1_sphere.dir/DependInfo.cmake"
   "TP_Projet/CMakeFiles/TP_Projet_exo2_lune.dir/DependInfo.cmake"
   "TP_Projet/CMakeFiles/TP_Projet_exo3_earth.dir/DependInfo.cmake"
-  "TP_SolarSystem/CMakeFiles/TP_SolarSystem_EarthMain.dir/DependInfo.cmake"
-  "TP_SolarSystem/CMakeFiles/TP_SolarSystem_SolarSystemMain.dir/DependInfo.cmake"
+  "TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/DependInfo.cmake"
   "TP_template/CMakeFiles/TP_template_SDLtemplate.dir/DependInfo.cmake"
   )
