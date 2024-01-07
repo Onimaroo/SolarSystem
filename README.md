@@ -24,13 +24,23 @@ Le pavé numérique est dédié aux modes de vue planétaire. Voici les numéros
 pour chaque mode :
 
 Bouton 0 : Système Solaire
+
 Bouton 1 : Mercure
+
 Bouton 2 : Venus
+
 Bouton 3 : La Terre
+
 Bouton 4 : Mars
+
 Bouton 5 : Jupiter
-Bouton 6 : SaturneBouton 7 : Uranus
+
+Bouton 6 : Saturne 
+
+Bouton 7 : Uranus
+
 Bouton 8 : Neptune
+
 Bouton 9 : Pluton
 
 Appuyer sur la flèche de gauche et de droite permettent de respectivement
