@@ -174,6 +174,7 @@ std::unique_ptr<Image> pImageEarth = loadImage("/home/padawan/Téléchargements/
 
     for(int i = 0; i < 32; i++) {
         rotationAxes[i] = glm::sphericalRand(1.f);
+        
     }
     
     while(!done) {
