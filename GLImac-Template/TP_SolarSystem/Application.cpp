@@ -48,14 +48,13 @@ int main(int argc, char** argv) {
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/UranusMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/NeptuneMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/PlutoMap.jpg"));
-    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/CloudMap.jpg"));
 
     // Chargement des textures des satellites
 
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/MoonMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/PhobosMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/DemiosMap.jpg"));
-    /*
+    
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/CallistoMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/GanymedeMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/EuropaMap.jpg"));
@@ -76,7 +75,8 @@ int main(int argc, char** argv) {
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/TritonMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/NereidMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/CharonMap.jpg"));
-    */
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/CloudMap.jpg"));
+    
     
     for(int i = 0; i < image_array.size(); i++) {
         if(image_array[i] == NULL) {

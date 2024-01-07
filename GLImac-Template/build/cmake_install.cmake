@@ -40,9 +40,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/glimac/cmake_install.cmake")
-  include("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_Projet/cmake_install.cmake")
   include("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_SolarSystem/cmake_install.cmake")
-  include("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/build/TP_template/cmake_install.cmake")
 
 endif()
 

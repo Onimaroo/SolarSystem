@@ -124,162 +124,6 @@ glimac/fast:
 .PHONY : glimac/fast
 
 #=============================================================================
-# Target rules for targets named TP_Projet_exo8_lightpoint
-
-# Build rule for target.
-TP_Projet_exo8_lightpoint: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_exo8_lightpoint
-.PHONY : TP_Projet_exo8_lightpoint
-
-# fast build rule for target.
-TP_Projet_exo8_lightpoint/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_exo8_lightpoint.dir/build.make TP_Projet/CMakeFiles/TP_Projet_exo8_lightpoint.dir/build
-.PHONY : TP_Projet_exo8_lightpoint/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_exo7_light_placeholder
-
-# Build rule for target.
-TP_Projet_exo7_light_placeholder: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_exo7_light_placeholder
-.PHONY : TP_Projet_exo7_light_placeholder
-
-# fast build rule for target.
-TP_Projet_exo7_light_placeholder/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_exo7_light_placeholder.dir/build.make TP_Projet/CMakeFiles/TP_Projet_exo7_light_placeholder.dir/build
-.PHONY : TP_Projet_exo7_light_placeholder/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_exo7_light
-
-# Build rule for target.
-TP_Projet_exo7_light: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_exo7_light
-.PHONY : TP_Projet_exo7_light
-
-# fast build rule for target.
-TP_Projet_exo7_light/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_exo7_light.dir/build.make TP_Projet/CMakeFiles/TP_Projet_exo7_light.dir/build
-.PHONY : TP_Projet_exo7_light/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_exo6_freeflycam
-
-# Build rule for target.
-TP_Projet_exo6_freeflycam: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_exo6_freeflycam
-.PHONY : TP_Projet_exo6_freeflycam
-
-# fast build rule for target.
-TP_Projet_exo6_freeflycam/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_exo6_freeflycam.dir/build.make TP_Projet/CMakeFiles/TP_Projet_exo6_freeflycam.dir/build
-.PHONY : TP_Projet_exo6_freeflycam/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_exo5_camera
-
-# Build rule for target.
-TP_Projet_exo5_camera: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_exo5_camera
-.PHONY : TP_Projet_exo5_camera
-
-# fast build rule for target.
-TP_Projet_exo5_camera/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_exo5_camera.dir/build.make TP_Projet/CMakeFiles/TP_Projet_exo5_camera.dir/build
-.PHONY : TP_Projet_exo5_camera/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_exo4_multitexturing
-
-# Build rule for target.
-TP_Projet_exo4_multitexturing: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_exo4_multitexturing
-.PHONY : TP_Projet_exo4_multitexturing
-
-# fast build rule for target.
-TP_Projet_exo4_multitexturing/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_exo4_multitexturing.dir/build.make TP_Projet/CMakeFiles/TP_Projet_exo4_multitexturing.dir/build
-.PHONY : TP_Projet_exo4_multitexturing/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_SatellitePlaceholder
-
-# Build rule for target.
-TP_Projet_SatellitePlaceholder: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_SatellitePlaceholder
-.PHONY : TP_Projet_SatellitePlaceholder
-
-# fast build rule for target.
-TP_Projet_SatellitePlaceholder/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_SatellitePlaceholder.dir/build.make TP_Projet/CMakeFiles/TP_Projet_SatellitePlaceholder.dir/build
-.PHONY : TP_Projet_SatellitePlaceholder/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_Placeholder
-
-# Build rule for target.
-TP_Projet_Placeholder: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_Placeholder
-.PHONY : TP_Projet_Placeholder
-
-# fast build rule for target.
-TP_Projet_Placeholder/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_Placeholder.dir/build.make TP_Projet/CMakeFiles/TP_Projet_Placeholder.dir/build
-.PHONY : TP_Projet_Placeholder/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_SDLtemplate
-
-# Build rule for target.
-TP_Projet_SDLtemplate: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_SDLtemplate
-.PHONY : TP_Projet_SDLtemplate
-
-# fast build rule for target.
-TP_Projet_SDLtemplate/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_SDLtemplate.dir/build.make TP_Projet/CMakeFiles/TP_Projet_SDLtemplate.dir/build
-.PHONY : TP_Projet_SDLtemplate/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_exo1_sphere
-
-# Build rule for target.
-TP_Projet_exo1_sphere: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_exo1_sphere
-.PHONY : TP_Projet_exo1_sphere
-
-# fast build rule for target.
-TP_Projet_exo1_sphere/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_exo1_sphere.dir/build.make TP_Projet/CMakeFiles/TP_Projet_exo1_sphere.dir/build
-.PHONY : TP_Projet_exo1_sphere/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_exo2_lune
-
-# Build rule for target.
-TP_Projet_exo2_lune: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_exo2_lune
-.PHONY : TP_Projet_exo2_lune
-
-# fast build rule for target.
-TP_Projet_exo2_lune/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_exo2_lune.dir/build.make TP_Projet/CMakeFiles/TP_Projet_exo2_lune.dir/build
-.PHONY : TP_Projet_exo2_lune/fast
-
-#=============================================================================
-# Target rules for targets named TP_Projet_exo3_earth
-
-# Build rule for target.
-TP_Projet_exo3_earth: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_Projet_exo3_earth
-.PHONY : TP_Projet_exo3_earth
-
-# fast build rule for target.
-TP_Projet_exo3_earth/fast:
-	$(MAKE) -f TP_Projet/CMakeFiles/TP_Projet_exo3_earth.dir/build.make TP_Projet/CMakeFiles/TP_Projet_exo3_earth.dir/build
-.PHONY : TP_Projet_exo3_earth/fast
-
-#=============================================================================
 # Target rules for targets named TP_SolarSystem_Application
 
 # Build rule for target.
@@ -292,19 +136,6 @@ TP_SolarSystem_Application/fast:
 	$(MAKE) -f TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/build.make TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/build
 .PHONY : TP_SolarSystem_Application/fast
 
-#=============================================================================
-# Target rules for targets named TP_template_SDLtemplate
-
-# Build rule for target.
-TP_template_SDLtemplate: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_template_SDLtemplate
-.PHONY : TP_template_SDLtemplate
-
-# fast build rule for target.
-TP_template_SDLtemplate/fast:
-	$(MAKE) -f TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build.make TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build
-.PHONY : TP_template_SDLtemplate/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -314,20 +145,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... glimac"
-	@echo "... TP_Projet_exo8_lightpoint"
-	@echo "... TP_Projet_exo7_light_placeholder"
-	@echo "... TP_Projet_exo7_light"
-	@echo "... TP_Projet_exo6_freeflycam"
-	@echo "... TP_Projet_exo5_camera"
-	@echo "... TP_Projet_exo4_multitexturing"
-	@echo "... TP_Projet_SatellitePlaceholder"
-	@echo "... TP_Projet_Placeholder"
-	@echo "... TP_Projet_SDLtemplate"
-	@echo "... TP_Projet_exo1_sphere"
-	@echo "... TP_Projet_exo2_lune"
-	@echo "... TP_Projet_exo3_earth"
 	@echo "... TP_SolarSystem_Application"
-	@echo "... TP_template_SDLtemplate"
 .PHONY : help
 
 

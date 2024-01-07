@@ -4,6 +4,22 @@
 
 using namespace glimac;
 
+float callistoOrbitalPeriod = 2.9677113 * pow(10, -6);
+float callistoSize = 0.03447669179;
+float callistoDistance = 1.8827;
+
+float ganymedeOrbitalPeriod = 2.9677113 * pow(10, -6);
+float ganymedeSize = 0.03763642345;
+float ganymedeDistance = 1.0704;
+
+float europaOrbitalPeriod = 2.9677113 * pow(10, -6);
+float europaSize = 0.02232552817;
+float europaDistance = 0.6711;
+
+float ioOrbitalPeriod = 2.9677113 * pow(10, -6);
+float ioSize = 0.02605598547;
+float ioDistance = 0.4218;
+
 void jupiterViewRender(FilePath applicationPath, 
             SDLWindowManager windowManager, 
             float &speed,
@@ -145,11 +161,27 @@ void jupiterViewRender(FilePath applicationPath,
 
         glActiveTexture(GL_TEXTURE0);
 
-        // Draw the Sun
+        // Draw Jupiter
 
         glBindTexture(GL_TEXTURE_2D, textures[Jupiter]);
 
         glDrawArrays(GL_TRIANGLES, 0, jupiter.getVertexCount());
+
+        // Draw Callisto
+
+        drawSatellite(textures, Callisto, uniTextureProgram, jupiter, jupiterMVMatrix, callistoOrbitalPeriod, callistoSize, 1, callistoDistance, homothetieDistanceSatellite);
+    
+        // Draw Ganymede
+
+        drawSatellite(textures, Ganymede, uniTextureProgram, jupiter, jupiterMVMatrix, ganymedeOrbitalPeriod, ganymedeSize, 1, ganymedeDistance, homothetieDistanceSatellite);
+
+        // Draw Europa
+
+        drawSatellite(textures, Europa, uniTextureProgram, jupiter, jupiterMVMatrix, europaOrbitalPeriod, europaSize, 1, europaDistance, homothetieDistanceSatellite);
+    
+        // Draw Io
+
+        drawSatellite(textures, Io, uniTextureProgram, jupiter, jupiterMVMatrix, ioOrbitalPeriod, ioSize, 1, ioDistance, homothetieDistanceSatellite);
     
         glBindVertexArray(0);
 

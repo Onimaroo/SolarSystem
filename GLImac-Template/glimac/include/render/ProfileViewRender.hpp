@@ -55,7 +55,7 @@ void drawUniTexturePlanet(GLuint* textures,
 
     planetMVMatrix = glm::rotate(sunMVMatrix, rotationValue * orbitalPeriod, glm::vec3(0, 1, 0)); // Rotation autour du soleil
     planetMVMatrix = glm::translate(planetMVMatrix, glm::vec3(distance * homothetieDistance, 0, 0)); // La distance réelle * l'homothétie
-    planetMVMatrix = glm::scale(planetMVMatrix, glm::vec3(size * homothetieSize, size * homothetieSize, size * homothetieSize)); // Prise de rapport taille Planète/Soleil * l'homothétie
+    planetMVMatrix = glm::scale(planetMVMatrix, glm::vec3(size * homothetieSize, size * homothetieSize, size * homothetieSize)); // Prise de rapport taille Planète/Soleil * Homothétie pour ne pas la rendre trop petite
     planetMVMatrix = glm::rotate(planetMVMatrix, rotationValue * lengthDay, glm::vec3(0, 1, 0)); // Rotation sur elle-même  
 
     glUniformMatrix4fv(uniTextureProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * planetMVMatrix));
@@ -95,10 +95,10 @@ void drawMultiTexturePlanet(GLuint* textures,
 
     glm::mat4 planetMVMatrix = glm::translate(glm::mat4(1), glm::vec3(0, 0, -5));
 
-    planetMVMatrix = glm::rotate(sunMVMatrix, rotationValue * orbitalPeriod, glm::vec3(0, 1, 0)); // 7 secondes pour un tour complet
-    planetMVMatrix = glm::translate(planetMVMatrix, glm::vec3(distance * homothetieDistance, 0, 0)); // Homothétie de 1/5
-    planetMVMatrix = glm::scale(planetMVMatrix, glm::vec3(size * homothetieSize, size * homothetieSize, size * homothetieSize)); // Prise de rapport taille Planète/Soleil * Homothétie de 10
-    planetMVMatrix = glm::rotate(planetMVMatrix, rotationValue * lengthDay, glm::vec3(0, 1, 0)); // Rotation sur elle-même 
+    planetMVMatrix = glm::rotate(sunMVMatrix, rotationValue * orbitalPeriod, glm::vec3(0, 1, 0));
+    planetMVMatrix = glm::translate(planetMVMatrix, glm::vec3(distance * homothetieDistance, 0, 0));
+    planetMVMatrix = glm::scale(planetMVMatrix, glm::vec3(size * homothetieSize, size * homothetieSize, size * homothetieSize));
+    planetMVMatrix = glm::rotate(planetMVMatrix, rotationValue * lengthDay, glm::vec3(0, 1, 0)); 
 
     glUniformMatrix4fv(multiTextureProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * planetMVMatrix));
     glUniformMatrix4fv(uniTextureProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(planetMVMatrix));
@@ -117,9 +117,8 @@ void drawSatellite(GLuint* textures,
             PlanetTexture name, 
             const UniTexturePlanetProgram& uniTextureProgram, 
             Sphere sun,
-            glm::mat4 sunMVMatrix, 
+            glm::mat4 planetMVMatrix, 
             float orbitalPeriod,
-            float lengthDay,
             float size,
             float homothetieSize, 
             float distance,
@@ -129,15 +128,14 @@ void drawSatellite(GLuint* textures,
 
     glBindTexture(GL_TEXTURE_2D, textures[name]);
 
-    glm::mat4 planetMVMatrix = glm::translate(glm::mat4(1), glm::vec3(0, 0, -5));
+    glm::mat4 satelliteMVMatrix = glm::translate(glm::mat4(1), glm::vec3(0, 0, -5));
 
-    planetMVMatrix = glm::rotate(sunMVMatrix, rotationValue * orbitalPeriod, glm::vec3(0, 1, 0)); // Rotation autour du soleil
-    planetMVMatrix = glm::translate(planetMVMatrix, glm::vec3(distance * homothetieDistance, 0, 0)); // La distance réelle * l'homothétie
-    planetMVMatrix = glm::scale(planetMVMatrix, glm::vec3(size, size, size)); // Prise de rapport taille Planète/Soleil * l'homothétie
-    planetMVMatrix = glm::rotate(planetMVMatrix, rotationValue * lengthDay, glm::vec3(0, 1, 0)); // Rotation sur elle-même  
+    satelliteMVMatrix = glm::rotate(planetMVMatrix, rotationValue * orbitalPeriod, glm::vec3(0, 1, 0)); // Rotation autour du soleil
+    satelliteMVMatrix = glm::translate(satelliteMVMatrix, glm::vec3(distance * homothetieDistance, 0, 0)); // La distance réelle * l'homothétie
+    satelliteMVMatrix = glm::scale(satelliteMVMatrix, glm::vec3(size * homothetieSize, size * homothetieSize, size * homothetieSize)); // Prise de rapport taille Planète/Soleil * l'homothétie
 
-    glUniformMatrix4fv(uniTextureProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * planetMVMatrix));
-    glUniformMatrix4fv(uniTextureProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(planetMVMatrix));
+    glUniformMatrix4fv(uniTextureProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * satelliteMVMatrix));
+    glUniformMatrix4fv(uniTextureProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(satelliteMVMatrix));
 
     glDrawArrays(GL_TRIANGLES, 0, sun.getVertexCount());
 

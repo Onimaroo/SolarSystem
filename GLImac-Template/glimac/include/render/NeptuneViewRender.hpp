@@ -4,6 +4,14 @@
 
 using namespace glimac;
 
+float tritonOrbitalPeriod = 2.9677113 * pow(10, -6);
+float tritonSize = 0.02748355129;
+float tritonDistance = 0.35476;
+
+float nereidOrbitalPeriod = 2.9677113 * pow(10, -6);
+float nereidSize = 0.00345219722;
+float nereidDistance = 5.513;
+
 void neptuneViewRender(FilePath applicationPath, 
             SDLWindowManager windowManager, 
             float &speed,
@@ -150,6 +158,14 @@ void neptuneViewRender(FilePath applicationPath,
         glBindTexture(GL_TEXTURE_2D, textures[Neptune]);
 
         glDrawArrays(GL_TRIANGLES, 0, neptune.getVertexCount());
+
+        // Draw Triton
+
+        drawSatellite(textures, Triton, uniTextureProgram, neptune, neptuneMVMatrix, tritonOrbitalPeriod, tritonSize, 1, tritonDistance, homothetieDistanceSatellite);
+    
+        // Draw Nereid
+
+        drawSatellite(textures, Nereid, uniTextureProgram, neptune, neptuneMVMatrix, nereidOrbitalPeriod, nereidSize, 1, nereidDistance, homothetieDistanceSatellite);
     
         glBindVertexArray(0);
 

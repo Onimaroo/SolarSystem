@@ -4,6 +4,14 @@
 
 using namespace glimac;
 
+float phobosOrbitalPeriod = 2.9677113 * pow(10, -6);
+float phobosSize = 0.2724;
+float phobosDistance = 0.009378;
+
+float demiosOrbitalPeriod = 2.9677113 * pow(10, -6);
+float demiosSize = 0.2724;
+float demiosDistance = 0.023459;
+
 void marsViewRender(FilePath applicationPath, 
             SDLWindowManager windowManager, 
             float &speed,
@@ -153,8 +161,12 @@ void marsViewRender(FilePath applicationPath,
 
         // Draw Phobos
 
-        drawSatellite(textures, Moon, uniTextureProgram, mars, marsMVMatrix, moonOrbitalPeriod, moonLengthDay, moonSize, homothetiePlanete, moonDistance, homothetieDistance);
+        drawSatellite(textures, Phobos, uniTextureProgram, mars, marsMVMatrix, phobosOrbitalPeriod, phobosSize, 1, phobosDistance, 40 * homothetieDistanceSatellite);
     
+        // Draw Demios
+
+        drawSatellite(textures, Demios, uniTextureProgram, mars, marsMVMatrix, demiosOrbitalPeriod, demiosSize, 1, demiosDistance, 40 * homothetieDistanceSatellite);
+
         glBindVertexArray(0);
 
         // Update the display

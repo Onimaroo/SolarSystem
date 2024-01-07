@@ -4,6 +4,26 @@
 
 using namespace glimac;
 
+float arielOrbitalPeriod = 2.9677113 * pow(10, -6);
+float arielSize = 0.04581657597;
+float arielDistance = 0.1909;
+
+float umbrielOrbitalPeriod = 2.9677113 * pow(10, -6);
+float umbrielSize = 0.02305417553;
+float umbrielDistance = 0.266;
+
+float titaniaOrbitalPeriod = 2.9677113 * pow(10, -6);
+float titaniaSize = 0.03110559104;
+float titaniaDistance = 0.4363011;
+
+float oberonOrbitalPeriod = 2.9677113 * pow(10, -6);
+float oberonSize = 0.03002129169;
+float oberonDistance = 0.5835014;
+
+float mirandaOrbitalPeriod = 2.9677113 * pow(10, -6);
+float mirandaSize = 0.01859474804;
+float mirandaDistance = 0.1299;
+
 void uranusViewRender(FilePath applicationPath, 
             SDLWindowManager windowManager, 
             float &speed,
@@ -150,6 +170,26 @@ void uranusViewRender(FilePath applicationPath,
         glBindTexture(GL_TEXTURE_2D, textures[Uranus]);
 
         glDrawArrays(GL_TRIANGLES, 0, uranus.getVertexCount());
+
+        // Draw Ariel
+
+        drawSatellite(textures, Ariel, uniTextureProgram, uranus, uranusMVMatrix, arielOrbitalPeriod, arielSize, 1, arielDistance, 10 * homothetieDistanceSatellite);
+    
+        // Draw Umbriel
+
+        drawSatellite(textures, Umbriel, uniTextureProgram, uranus, uranusMVMatrix, umbrielOrbitalPeriod, umbrielSize, 1, umbrielSize, 10 * homothetieDistanceSatellite);
+
+        // Draw Titania
+
+        drawSatellite(textures, Titania, uniTextureProgram, uranus, uranusMVMatrix, titaniaOrbitalPeriod, titaniaSize, 1, titaniaDistance, 10 * homothetieDistanceSatellite);
+    
+        // Draw Oberon
+
+        drawSatellite(textures, Oberon, uniTextureProgram, uranus, uranusMVMatrix, oberonOrbitalPeriod, oberonSize, 1, oberonDistance, 10 * homothetieDistanceSatellite);
+
+        // Draw Miranda
+
+        drawSatellite(textures, Miranda, uniTextureProgram, uranus, uranusMVMatrix, mirandaOrbitalPeriod, mirandaSize, 1, mirandaDistance, 10 * homothetieDistanceSatellite);
     
         glBindVertexArray(0);
 

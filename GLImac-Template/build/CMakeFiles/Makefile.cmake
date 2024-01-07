@@ -8,9 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
-  "../TP_Projet/CMakeLists.txt"
   "../TP_SolarSystem/CMakeLists.txt"
-  "../TP_template/CMakeLists.txt"
   "CMakeFiles/3.13.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.13.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.13.4/CMakeSystem.cmake"
@@ -52,26 +50,11 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "glimac/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "TP_Projet/CMakeFiles/CMakeDirectoryInformation.cmake"
   "TP_SolarSystem/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "TP_template/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "glimac/CMakeFiles/glimac.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_exo8_lightpoint.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_exo7_light_placeholder.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_exo7_light.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_exo6_freeflycam.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_exo5_camera.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_exo4_multitexturing.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_SatellitePlaceholder.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_Placeholder.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_SDLtemplate.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_exo1_sphere.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_exo2_lune.dir/DependInfo.cmake"
-  "TP_Projet/CMakeFiles/TP_Projet_exo3_earth.dir/DependInfo.cmake"
   "TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/DependInfo.cmake"
-  "TP_template/CMakeFiles/TP_template_SDLtemplate.dir/DependInfo.cmake"
   )

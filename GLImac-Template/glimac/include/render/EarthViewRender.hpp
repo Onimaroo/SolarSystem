@@ -5,9 +5,8 @@
 using namespace glimac;
 
 float moonOrbitalPeriod = 2.9677113 * pow(10, -6);
-float moonLengthDay = 2.74367778 * pow(10, -6);
 float moonSize = 0.2724;
-float moonDistance = 80.9;
+float moonDistance = 0.3844;
 
 void earthViewRender(FilePath applicationPath, 
             SDLWindowManager windowManager, 
@@ -135,30 +134,39 @@ void earthViewRender(FilePath applicationPath,
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        // glClearColor(0.2f, 0.2f, 0.2f, 1.0f); // Pour mettre l'arrière-plan en gris
+        multiTextureProgram.m_Program.use();
 
-        uniTextureProgram.m_Program.use();
+        glUniform1i(multiTextureProgram.uFirstTexture, 0);
+        glUniform1i(multiTextureProgram.uSecondTexture, 1);
+        
         glm::mat4 earthMVMatrix = glm::rotate(initial_MVMAtrix, rotationValue * earthLengthDay, glm::vec3(0, 1, 0));
         earthMVMatrix = glm::scale(earthMVMatrix, glm::vec3(homothetiePlanete, homothetiePlanete, homothetiePlanete));
 
-
-        glUniformMatrix4fv(uniTextureProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * earthMVMatrix));
-        glUniformMatrix4fv(uniTextureProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(earthMVMatrix));
-        glUniformMatrix4fv(uniTextureProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        glUniformMatrix4fv(multiTextureProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * earthMVMatrix));
+        glUniformMatrix4fv(multiTextureProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(earthMVMatrix));
+        glUniformMatrix4fv(multiTextureProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(normalMatrix));
 
         glBindVertexArray(vao);
 
         glActiveTexture(GL_TEXTURE0);
-
-        // Draw the Sun
-
         glBindTexture(GL_TEXTURE_2D, textures[Earth]);
+
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, textures[Cloud]);
 
         glDrawArrays(GL_TRIANGLES, 0, earth.getVertexCount());
 
+        glActiveTexture(GL_TEXTURE0);
+        
+        glBindTexture(GL_TEXTURE_2D, 0);
+
+        glActiveTexture(GL_TEXTURE1);
+        
+        glBindTexture(GL_TEXTURE_2D, 0);
+
         // Draw the Moon
 
-        drawSatellite(textures, Moon, uniTextureProgram, earth, earthMVMatrix, moonOrbitalPeriod, moonLengthDay, moonSize, homothetiePlanete, moonDistance, homothetieDistance);
+        drawSatellite(textures, Moon, uniTextureProgram, earth, earthMVMatrix, moonOrbitalPeriod, moonSize, 1, moonDistance, homothetieDistanceSatellite);
     
         glBindVertexArray(0);
 

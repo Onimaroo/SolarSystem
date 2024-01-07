@@ -44,18 +44,6 @@ enum PlanetTexture { Sun = 0,
                      Cloud = 33
                    };
 
-struct BackgroundProgram {
-    Program m_Program;
-
-    GLint uTexture;
-
-    BackgroundProgram(const FilePath& applicationPath):
-        m_Program(loadProgram(applicationPath.dirPath() + "shaders/tex2D.vs.glsl",
-                              applicationPath.dirPath() + "shaders/tex2D.fs.glsl")) {
-        uTexture = glGetUniformLocation(m_Program.getGLId(), "uTexture");
-    }
-};
-
 
 struct UniTexturePlanetProgram {
     Program m_Program;
@@ -139,5 +127,6 @@ float plutoDistance = 5906.4;
 
 float homothetiePlanete = 5; // On augmente de cinq fois les tailles des planètes pour éviter qu'elles soient trop petites.
 float homothetieDistance = 0.02; // On divise par 50 la distance des planètes pour éviter qu'elles soient trop loin.
+float homothetieDistanceSatellite = 5; // On multiplie par 5 la distance des satellites pour éviter qu'elles soient trop proche.
 
 float sunLengthDay = 3.24074074 * pow(10, -6);

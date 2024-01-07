@@ -4,6 +4,39 @@
 
 using namespace glimac;
 
+float mimasOrbitalPeriod = 2.9677113 * pow(10, -6);
+float mimasSize = 0.00340374377;
+float mimasDistance = 0.1855402;
+
+float enceladusOrbitalPeriod = 2.9677113 * pow(10, -6);
+float enceladusSize = 0.00432938347;
+float enceladusDistance = 0.2380245;
+
+float tethysOrbitalPeriod = 2.9677113 * pow(10, -6);
+float tethysSize = 0.00457667868;
+float tethysDistance = 0.29466;
+
+float dioneOrbitalPeriod = 2.9677113 * pow(10, -6);
+float dioneSize = 0.00964107848;
+float dioneDistance = 0.3774022;
+
+float rheaOrbitalPeriod = 2.9677113 * pow(10, -6);
+float rheaSize = 0.01313755795;
+float rheaDistance = 0.527041;
+
+float titanOrbitalPeriod = 2.9677113 * pow(10, -6);
+float titanSize = 0.0442168985;
+float titanDistance = 1.2218992;
+
+float hyperionOrbitalPeriod = 2.9677113 * pow(10, -6);
+float hyperionSize = 0.00231839258;
+float hyperionDistance = 1.5010342;
+
+float iapetusOrbitalPeriod = 2.9677113 * pow(10, -6);
+float iapetusSize = 0.01261377296;
+float iapetusDistance = 3.5608783;
+
+
 void saturnViewRender(FilePath applicationPath, 
             SDLWindowManager windowManager, 
             float &speed,
@@ -145,12 +178,46 @@ void saturnViewRender(FilePath applicationPath,
 
         glActiveTexture(GL_TEXTURE0);
 
-        // Draw the Sun
+        // Draw Saturn
 
         glBindTexture(GL_TEXTURE_2D, textures[Saturn]);
 
         glDrawArrays(GL_TRIANGLES, 0, saturn.getVertexCount());
+
+        // Homothétie mulitiplié par 10 en général pour voir Hyperion.
+
+        // Draw Mimas
+
+        drawSatellite(textures, Mimas, uniTextureProgram, saturn, saturnMVMatrix, mimasOrbitalPeriod, mimasSize, 10 * homothetiePlanete, mimasDistance, 50 * homothetieDistanceSatellite);
     
+        // Draw Enceladus
+
+        drawSatellite(textures, Enceladus, uniTextureProgram, saturn, saturnMVMatrix, enceladusOrbitalPeriod, enceladusSize, 10 * homothetiePlanete, enceladusSize, 50 * homothetieDistanceSatellite);
+
+        // Draw Tethys
+
+        drawSatellite(textures, Tethys, uniTextureProgram, saturn, saturnMVMatrix, tethysOrbitalPeriod, tethysSize, homothetiePlanete, tethysDistance, 50 * homothetieDistanceSatellite);
+    
+        // Draw Dione
+
+        drawSatellite(textures, Dione, uniTextureProgram, saturn, saturnMVMatrix, dioneOrbitalPeriod, dioneSize, homothetiePlanete, dioneDistance, 50 * homothetieDistanceSatellite);
+
+        // Draw Rhea
+
+        drawSatellite(textures, Rhea, uniTextureProgram, saturn, saturnMVMatrix, rheaOrbitalPeriod, rheaSize, homothetiePlanete, rheaDistance, 50 * homothetieDistanceSatellite);
+    
+        // Draw Titan
+
+        drawSatellite(textures, Titan, uniTextureProgram, saturn, saturnMVMatrix, titanOrbitalPeriod, titanSize, homothetiePlanete, titanDistance, 50 * homothetieDistanceSatellite);
+    
+        // Draw Hyperion
+        
+        drawSatellite(textures, Hyperion, uniTextureProgram, saturn, saturnMVMatrix, hyperionOrbitalPeriod, hyperionSize, homothetiePlanete, hyperionDistance, 50 * homothetieDistanceSatellite);
+
+        // Draw Iapetus
+
+        drawSatellite(textures, Iapetus, uniTextureProgram, saturn, saturnMVMatrix, iapetusOrbitalPeriod, iapetusSize, homothetiePlanete, iapetusSize, 50 * homothetieDistanceSatellite);
+
         glBindVertexArray(0);
 
         // Update the display

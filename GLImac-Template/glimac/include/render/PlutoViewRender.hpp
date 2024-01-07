@@ -4,6 +4,10 @@
 
 using namespace glimac;
 
+float charonOrbitalPeriod = 2.9677113 * pow(10, -6);
+float charonSize = 0.5101;
+float charonDistance = 0.019596;
+
 void plutoViewRender(FilePath applicationPath, 
             SDLWindowManager windowManager, 
             float &speed,
@@ -150,7 +154,11 @@ void plutoViewRender(FilePath applicationPath,
         glBindTexture(GL_TEXTURE_2D, textures[Pluto]);
 
         glDrawArrays(GL_TRIANGLES, 0, pluto.getVertexCount());
-    
+
+        // Draw Charon
+
+        drawSatellite(textures, Charon, uniTextureProgram, pluto, plutoMVMatrix, charonOrbitalPeriod, charonSize, 1, charonDistance, 40 * homothetieDistanceSatellite);
+
         glBindVertexArray(0);
 
         // Update the display
