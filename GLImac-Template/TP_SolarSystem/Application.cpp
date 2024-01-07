@@ -1,6 +1,13 @@
 #include "../glimac/include/render/ProfileViewRender.hpp"
-#include "../glimac/include/render/EarthViewRender.hpp"
 #include "../glimac/include/render/MercuryViewRender.hpp"
+#include "../glimac/include/render/VenusViewRender.hpp"
+#include "../glimac/include/render/EarthViewRender.hpp"
+#include "../glimac/include/render/MarsViewRender.hpp"
+#include "../glimac/include/render/JupiterViewRender.hpp"
+#include "../glimac/include/render/SaturnViewRender.hpp"
+#include "../glimac/include/render/UranusViewRender.hpp"
+#include "../glimac/include/render/NeptuneViewRender.hpp"
+#include "../glimac/include/render/PlutoViewRender.hpp"
 
 #define KEY_UP 72
 #define KEY_DOWN 80
@@ -29,6 +36,8 @@ int main(int argc, char** argv) {
 
     std::vector<std::unique_ptr<Image>> image_array;
 
+    // Chargement des textures des planètes
+
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/SunMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/MercuryMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/VenusMap.jpg"));
@@ -39,10 +48,36 @@ int main(int argc, char** argv) {
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/UranusMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/NeptuneMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/PlutoMap.jpg"));
-    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/MoonMap.jpg"));
     image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/CloudMap.jpg"));
-    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/SkyboxMap.png"));
 
+    // Chargement des textures des satellites
+
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/MoonMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/PhobosMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/DemiosMap.jpg"));
+    /*
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/CallistoMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/GanymedeMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/EuropaMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/IoMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/MimasMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/EnceladusMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/TethysMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/DioneMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/RheaMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/TitanMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/HyperionMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/IapetusMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/ArielMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/UmbrielMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/TitaniaMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/OberonMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/MirandaMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/TritonMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/NereidMap.jpg"));
+    image_array.push_back(loadImage("/home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/TP_SolarSystem/textures/CharonMap.jpg"));
+    */
+    
     for(int i = 0; i < image_array.size(); i++) {
         if(image_array[i] == NULL) {
             std::cout << "Couldn't find image." << std::endl;

@@ -14,37 +14,77 @@ void mercuryViewRender(FilePath applicationPath,
 
     bool done = false;
 
-    UniTexturePlanetProgram mercuryProgram(applicationPath);
-
-    std::vector<glm::vec3> rotationAxes(32);
-
-    for(int i = 0; i < 32; i++) {
-        rotationAxes[i] = glm::sphericalRand(1.f);
-    }
+    UniTexturePlanetProgram uniTextureProgram(applicationPath);
+    MultiTextureProgram multiTextureProgram(applicationPath);  
 
     while(!done) {
+        currentSecond = windowManager.getTime();
+        secondSpeed = speed * (currentSecond - prevSecond);
+        prevSecond = currentSecond;
+
+        rotationValue += secondSpeed;
+
         SDL_Event e;
         while(windowManager.pollEvent(e)) {
             if(e.type == SDL_QUIT) {
                 done = true; // Leave the loop after this iteration
             }
             if(windowManager.isKeyPressed(SDLK_RIGHT)) {
-                speed *= 1.25;     
+                speed *= 2;     
                 std::cout << "Vitesse accélérée. Vitesse désormais à " << speed << "x." << std::endl;
             }
             if(windowManager.isKeyPressed(SDLK_LEFT)) {
-                speed /= 1.25;
+                speed /= 2;
                 std::cout << "Vitesse ralentie. Vitesse désormais à " << speed << "x." << std::endl;
             }
-            if(windowManager.isKeyPressed(SDLK_m)) {
+            if(windowManager.isKeyPressed(SDLK_UP)) {
+                std::cout << "Basculement sur la vue écliptique." << std::endl;
+                camera = FreeflyCamera();
+                camera.rotateLeft(90);
+            }
+            if(windowManager.isKeyPressed(SDLK_DOWN)) {
+                std::cout << "Basculement sur la vue de profil." << std::endl;
+                camera = FreeflyCamera();
+            }
+            if(windowManager.isKeyPressed(SDLK_KP0)) {
                 std::cout << "Basculement sur le système solaire." << std::endl;
                 solarSystemProfileRender(applicationPath, windowManager, speed, vao, vbo, textures, mercury);
             }
-            if(windowManager.isKeyPressed(SDLK_e)) {
+            if(windowManager.isKeyPressed(SDLK_KP2)) {
+                std::cout << "Basculement sur Venus." << std::endl;
+                venusViewRender(applicationPath, windowManager, speed, vao, vbo, textures, mercury);
+            }
+            if(windowManager.isKeyPressed(SDLK_KP3)) {
                 std::cout << "Basculement sur la Terre." << std::endl;
                 earthViewRender(applicationPath, windowManager, speed, vao, vbo, textures, mercury);
-            }  
-            
+            }
+            if(windowManager.isKeyPressed(SDLK_KP4)) {
+                std::cout << "Basculement sur Mars." << std::endl;
+                marsViewRender(applicationPath, windowManager, speed, vao, vbo, textures, mercury);
+            }
+            if(windowManager.isKeyPressed(SDLK_KP5)) {
+                std::cout << "Basculement sur Jupiter." << std::endl;
+                jupiterViewRender(applicationPath, windowManager, speed, vao, vbo, textures, mercury);
+            }
+            if(windowManager.isKeyPressed(SDLK_KP6)) {
+                std::cout << "Basculement sur Saturne." << std::endl;
+                saturnViewRender(applicationPath, windowManager, speed, vao, vbo, textures, mercury);
+            }
+            if(windowManager.isKeyPressed(SDLK_KP7)) {
+                std::cout << "Basculement sur Uranus." << std::endl;
+                uranusViewRender(applicationPath, windowManager, speed, vao, vbo, textures, mercury);
+            }
+            if(windowManager.isKeyPressed(SDLK_KP8)) {
+                std::cout << "Basculement sur Neptune." << std::endl;
+                neptuneViewRender(applicationPath, windowManager, speed, vao, vbo, textures, mercury);
+            }
+            if(windowManager.isKeyPressed(SDLK_KP9)) {
+                std::cout << "Basculement sur Pluto." << std::endl;
+                plutoViewRender(applicationPath, windowManager, speed, vao, vbo, textures, mercury);
+            }
+            if(windowManager.isKeyPressed(SDLK_x)) {
+                std::cout << "Nombre de secondes écoulés:" << rotationValue << std::endl;
+            }
         }
 
         if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
@@ -87,35 +127,34 @@ void mercuryViewRender(FilePath applicationPath,
         auto initial_MVMAtrix = MVMatrix * viewMatrix;
 
         // Rendu
-        
+
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // glClearColor(0.2f, 0.2f, 0.2f, 1.0f); // Pour mettre l'arrière-plan en gris
 
-        mercuryProgram.m_Program.use();
+        uniTextureProgram.m_Program.use();
+        glm::mat4 mercuryMVMatrix = glm::rotate(initial_MVMAtrix, rotationValue * mercuryLengthDay, glm::vec3(0, 1, 0));
+        mercuryMVMatrix = glm::scale(mercuryMVMatrix, glm::vec3(homothetiePlanete, homothetiePlanete, homothetiePlanete));
 
-        glm::mat4 mercuryMVMatrix = glm::rotate(initial_MVMAtrix, speed * windowManager.getTime(), glm::vec3(0, 1, 0));
 
-        glUniformMatrix4fv(mercuryProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mercuryMVMatrix));
-        glUniformMatrix4fv(mercuryProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mercuryMVMatrix));
-        glUniformMatrix4fv(mercuryProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        glUniformMatrix4fv(uniTextureProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mercuryMVMatrix));
+        glUniformMatrix4fv(uniTextureProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mercuryMVMatrix));
+        glUniformMatrix4fv(uniTextureProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(normalMatrix));
 
         glBindVertexArray(vao);
 
-        // glActiveTexture(GL_TEXTURE);
-
         glActiveTexture(GL_TEXTURE0);
+
+        // Draw the Sun
+
         glBindTexture(GL_TEXTURE_2D, textures[Mercury]);
 
         glDrawArrays(GL_TRIANGLES, 0, mercury.getVertexCount());
-        
-        glBindTexture(GL_TEXTURE_2D, 0);
-
+    
         glBindVertexArray(0);
 
         // Update the display
         windowManager.swapBuffers();
-
     }
 
     // Clear everything after exiting

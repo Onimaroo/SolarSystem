@@ -4,18 +4,13 @@
 
 using namespace glimac;
 
-float moonOrbitalPeriod = 2.9677113 * pow(10, -6);
-float moonLengthDay = 2.74367778 * pow(10, -6);
-float moonSize = 0.2724;
-float moonDistance = 80.9;
-
-void earthViewRender(FilePath applicationPath, 
+void venusViewRender(FilePath applicationPath, 
             SDLWindowManager windowManager, 
             float &speed,
             GLuint vao,
             GLuint vbo,
             GLuint* textures,
-            Sphere earth) {
+            Sphere venus) {
 
     bool done = false;
 
@@ -53,39 +48,39 @@ void earthViewRender(FilePath applicationPath,
             }
             if(windowManager.isKeyPressed(SDLK_KP0)) {
                 std::cout << "Basculement sur le système solaire." << std::endl;
-                solarSystemProfileRender(applicationPath, windowManager, speed, vao, vbo, textures, earth);
+                solarSystemProfileRender(applicationPath, windowManager, speed, vao, vbo, textures, venus);
             }
             if(windowManager.isKeyPressed(SDLK_KP1)) {
                 std::cout << "Basculement sur Mercure." << std::endl;
-                mercuryViewRender(applicationPath, windowManager, speed, vao, vbo, textures, earth);
+                mercuryViewRender(applicationPath, windowManager, speed, vao, vbo, textures, venus);
             }
-            if(windowManager.isKeyPressed(SDLK_KP2)) {
-                std::cout << "Basculement sur Venus." << std::endl;
-                venusViewRender(applicationPath, windowManager, speed, vao, vbo, textures, earth);
+            if(windowManager.isKeyPressed(SDLK_KP3)) {
+                std::cout << "Basculement sur la Terre." << std::endl;
+                earthViewRender(applicationPath, windowManager, speed, vao, vbo, textures, venus);
             }
             if(windowManager.isKeyPressed(SDLK_KP4)) {
                 std::cout << "Basculement sur Mars." << std::endl;
-                marsViewRender(applicationPath, windowManager, speed, vao, vbo, textures, earth);
+                marsViewRender(applicationPath, windowManager, speed, vao, vbo, textures, venus);
             }
             if(windowManager.isKeyPressed(SDLK_KP5)) {
                 std::cout << "Basculement sur Jupiter." << std::endl;
-                jupiterViewRender(applicationPath, windowManager, speed, vao, vbo, textures, earth);
+                jupiterViewRender(applicationPath, windowManager, speed, vao, vbo, textures, venus);
             }
             if(windowManager.isKeyPressed(SDLK_KP6)) {
                 std::cout << "Basculement sur Saturne." << std::endl;
-                saturnViewRender(applicationPath, windowManager, speed, vao, vbo, textures, earth);
+                saturnViewRender(applicationPath, windowManager, speed, vao, vbo, textures, venus);
             }
             if(windowManager.isKeyPressed(SDLK_KP7)) {
                 std::cout << "Basculement sur Uranus." << std::endl;
-                uranusViewRender(applicationPath, windowManager, speed, vao, vbo, textures, earth);
+                uranusViewRender(applicationPath, windowManager, speed, vao, vbo, textures, venus);
             }
             if(windowManager.isKeyPressed(SDLK_KP8)) {
                 std::cout << "Basculement sur Neptune." << std::endl;
-                neptuneViewRender(applicationPath, windowManager, speed, vao, vbo, textures, earth);
+                neptuneViewRender(applicationPath, windowManager, speed, vao, vbo, textures, venus);
             }
             if(windowManager.isKeyPressed(SDLK_KP9)) {
                 std::cout << "Basculement sur Pluto." << std::endl;
-                plutoViewRender(applicationPath, windowManager, speed, vao, vbo, textures, earth);
+                plutoViewRender(applicationPath, windowManager, speed, vao, vbo, textures, venus);
             }
             if(windowManager.isKeyPressed(SDLK_x)) {
                 std::cout << "Nombre de secondes écoulés:" << rotationValue << std::endl;
@@ -138,12 +133,12 @@ void earthViewRender(FilePath applicationPath,
         // glClearColor(0.2f, 0.2f, 0.2f, 1.0f); // Pour mettre l'arrière-plan en gris
 
         uniTextureProgram.m_Program.use();
-        glm::mat4 earthMVMatrix = glm::rotate(initial_MVMAtrix, rotationValue * earthLengthDay, glm::vec3(0, 1, 0));
-        earthMVMatrix = glm::scale(earthMVMatrix, glm::vec3(homothetiePlanete, homothetiePlanete, homothetiePlanete));
+        glm::mat4 venusMVMatrix = glm::rotate(initial_MVMAtrix, rotationValue * venusLengthDay, glm::vec3(0, 1, 0));
+        venusMVMatrix = glm::scale(venusMVMatrix, glm::vec3(homothetiePlanete, homothetiePlanete, homothetiePlanete));
 
 
-        glUniformMatrix4fv(uniTextureProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * earthMVMatrix));
-        glUniformMatrix4fv(uniTextureProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(earthMVMatrix));
+        glUniformMatrix4fv(uniTextureProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * venusMVMatrix));
+        glUniformMatrix4fv(uniTextureProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(venusMVMatrix));
         glUniformMatrix4fv(uniTextureProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(normalMatrix));
 
         glBindVertexArray(vao);
@@ -152,13 +147,9 @@ void earthViewRender(FilePath applicationPath,
 
         // Draw the Sun
 
-        glBindTexture(GL_TEXTURE_2D, textures[Earth]);
+        glBindTexture(GL_TEXTURE_2D, textures[Venus]);
 
-        glDrawArrays(GL_TRIANGLES, 0, earth.getVertexCount());
-
-        // Draw the Moon
-
-        drawSatellite(textures, Moon, uniTextureProgram, earth, earthMVMatrix, moonOrbitalPeriod, moonLengthDay, moonSize, homothetiePlanete, moonDistance, homothetieDistance);
+        glDrawArrays(GL_TRIANGLES, 0, venus.getVertexCount());
     
         glBindVertexArray(0);
 
