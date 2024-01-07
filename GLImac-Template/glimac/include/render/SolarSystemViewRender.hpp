@@ -6,7 +6,6 @@
 
 using namespace glimac;
 
-// Event loop:
 float currentSecond = 0;
 float prevSecond = 0;
 float secondSpeed = 0;
@@ -36,7 +35,7 @@ void neptuneViewRender(FilePath applicationPath, SDLWindowManager windowManager,
 void plutoViewRender(FilePath applicationPath, SDLWindowManager windowManager, float &speed, GLuint vao, GLuint vbo, GLuint* textures, Sphere pluto);
 
 void drawUniTexturePlanet(GLuint* textures,
-            PlanetTexture name, 
+            TextureNum name, 
             const UniTexturePlanetProgram& uniTextureProgram, 
             Sphere sun,
             glm::mat4 sunMVMatrix, 
@@ -69,8 +68,8 @@ void drawUniTexturePlanet(GLuint* textures,
 };
 
 void drawMultiTexturePlanet(GLuint* textures,
-            PlanetTexture firstName,
-            PlanetTexture secondName,
+            TextureNum firstName,
+            TextureNum secondName,
             const UniTexturePlanetProgram& uniTextureProgram,
             const MultiTextureProgram& multiTextureProgram, 
             Sphere sun, 
@@ -114,7 +113,7 @@ void drawMultiTexturePlanet(GLuint* textures,
 };
 
 void drawSatellite(GLuint* textures,
-            PlanetTexture name, 
+            TextureNum name, 
             const UniTexturePlanetProgram& uniTextureProgram, 
             Sphere sun,
             glm::mat4 planetMVMatrix, 
@@ -167,7 +166,7 @@ void solarSystemProfileRender(FilePath applicationPath,
 
         SDL_Event e;
         while(windowManager.pollEvent(e)) {
-            if(e.type == SDL_QUIT) {
+            if(e.type == SDL_QUIT || windowManager.isKeyPressed(SDLK_x)) {
                 done = true; // Leave the loop after this iteration
             }
             if(windowManager.isKeyPressed(SDLK_RIGHT)) {
@@ -223,7 +222,7 @@ void solarSystemProfileRender(FilePath applicationPath,
                 std::cout << "Basculement sur Pluto." << std::endl;
                 plutoViewRender(applicationPath, windowManager, speed, vao, vbo, textures, sun);
             }
-            if(windowManager.isKeyPressed(SDLK_x)) {
+            if(windowManager.isKeyPressed(SDLK_w)) {
                 std::cout << "Nombre de secondes écoulés:" << rotationValue << std::endl;
             }
         }
@@ -334,7 +333,4 @@ void solarSystemProfileRender(FilePath applicationPath,
         windowManager.swapBuffers();
     }
 
-    // Clear everything after exiting
-    glDeleteBuffers(1, &vbo);
-    glDeleteTextures(1, textures);
 }

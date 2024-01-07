@@ -11,7 +11,7 @@ TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../g
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/glimac/common.hpp
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/glimac/glm.hpp
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/PlanetDatabase.hpp
-TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/ProfileViewRender.hpp
+TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/SolarSystemViewRender.hpp
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../third-party/include/GL/glew.h
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../third-party/include/glm/detail/_fixes.hpp
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../third-party/include/glm/detail/_swizzle.hpp
@@ -110,8 +110,8 @@ TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../g
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/MercuryViewRender.hpp
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/NeptuneViewRender.hpp
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/PlutoViewRender.hpp
-TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/ProfileViewRender.hpp
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/SaturnViewRender.hpp
+TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/SolarSystemViewRender.hpp
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/UranusViewRender.hpp
 TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o: ../glimac/include/render/VenusViewRender.hpp
 

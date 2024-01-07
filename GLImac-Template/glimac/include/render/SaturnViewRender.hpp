@@ -1,6 +1,6 @@
 #pragma once
 
-#include <render/ProfileViewRender.hpp>
+#include <render/SolarSystemViewRender.hpp>
 
 using namespace glimac;
 
@@ -59,7 +59,7 @@ void saturnViewRender(FilePath applicationPath,
 
         SDL_Event e;
         while(windowManager.pollEvent(e)) {
-            if(e.type == SDL_QUIT) {
+            if(e.type == SDL_QUIT || windowManager.isKeyPressed(SDLK_x)) {
                 done = true; // Leave the loop after this iteration
             }
             if(windowManager.isKeyPressed(SDLK_RIGHT)) {
@@ -115,7 +115,7 @@ void saturnViewRender(FilePath applicationPath,
                 std::cout << "Basculement sur Pluto." << std::endl;
                 plutoViewRender(applicationPath, windowManager, speed, vao, vbo, textures, saturn);
             }
-            if(windowManager.isKeyPressed(SDLK_x)) {
+            if(windowManager.isKeyPressed(SDLK_w)) {
                 std::cout << "Nombre de secondes écoulés:" << rotationValue << std::endl;
             }
         }

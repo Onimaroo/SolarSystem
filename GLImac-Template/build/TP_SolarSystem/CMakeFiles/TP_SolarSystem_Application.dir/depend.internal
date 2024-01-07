@@ -12,7 +12,7 @@ TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o
  ../glimac/include/glimac/common.hpp
  ../glimac/include/glimac/glm.hpp
  ../glimac/include/render/PlanetDatabase.hpp
- ../glimac/include/render/ProfileViewRender.hpp
+ ../glimac/include/render/SolarSystemViewRender.hpp
  ../third-party/include/GL/glew.h
  ../third-party/include/glm/detail/_fixes.hpp
  ../third-party/include/glm/detail/_swizzle.hpp
@@ -111,7 +111,7 @@ TP_SolarSystem/CMakeFiles/TP_SolarSystem_Application.dir/Application.cpp.o
  /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/glimac/include/render/MercuryViewRender.hpp
  /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/glimac/include/render/NeptuneViewRender.hpp
  /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/glimac/include/render/PlutoViewRender.hpp
- /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/glimac/include/render/ProfileViewRender.hpp
  /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/glimac/include/render/SaturnViewRender.hpp
+ /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/glimac/include/render/SolarSystemViewRender.hpp
  /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/glimac/include/render/UranusViewRender.hpp
  /home/padawan/Téléchargements/GLImac-Template-GLEW_inside/GLImac-Template/glimac/include/render/VenusViewRender.hpp

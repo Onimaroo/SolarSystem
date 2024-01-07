@@ -8,7 +8,7 @@
 
 using namespace glimac;
 
-enum PlanetTexture { Sun = 0,
+enum TextureNum { Sun = 0,
                      Mercury = 1, 
                      Venus = 2, 
                      Earth = 3, 
